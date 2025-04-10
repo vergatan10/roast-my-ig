@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Roast My IG
 
-## Getting Started
+Project untuk melakukan analisis akun Instagram menggunakan AI model Google Gemini dan data dari RapidAPI.
 
-First, run the development server:
+## 🔗 Repository
+[https://github.com/vergatan10/roast-my-ig](https://github.com/vergatan10/roast-my-ig)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Langkah Instalasi
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/vergatan10/roast-my-ig.git
+   cd roast-my-ig
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install Dependency**
+   ```bash
+   npm install
+   # atau
+   yarn install
+   ```
 
-## Learn More
+3. **Siapkan API Keys**
 
-To learn more about Next.js, take a look at the following resources:
+   ### 🔑 Google Gemini API Key
+   - Dapatkan dari [Google AI Studio](https://aistudio.google.com/).
+   - Simpan key ke dalam file `.env`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ### 🔑 Instagram Scraper Stable API (RapidAPI)
+   - Kunjungi: [https://rapidapi.com/thetechguy32744/api/instagram-scraper-stable-api](https://rapidapi.com/thetechguy32744/api/instagram-scraper-stable-api)
+   - Buat sekitar **5 API Key** untuk menghindari rate limit (digunakan untuk looping jika terjadi kegagalan fetch).
+   - Simpan semua key dan detail host/url ke dalam file `.env`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Contoh `.env`**
+   ```env
+   # Google Gemini
+   GOOGLE_API_KEY=your_google_gemini_api_key
 
-## Deploy on Vercel
+   # RapidAPI (gunakan key ke-1 sampai ke-5)
+   X_RAPIDAPI_KEY1=key1
+   X_RAPIDAPI_KEY2=key2
+   X_RAPIDAPI_KEY3=key3
+   X_RAPIDAPI_KEY4=key4
+   X_RAPIDAPI_KEY5=key5
+   
+   X_RAPIDAPI_HOST=instagram-scraper-stable-api.p.rapidapi.com
+   NEXT_PUBLIC_API_BACKEND_V2=https://instagram-scraper-stable-api.p.rapidapi.com
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Jalankan Aplikasi**
+   ```bash
+   npm run dev
+   # atau
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Catatan Developer
+
+- Jika ingin mengganti API RapidAPI atau AI model yang digunakan, kamu bisa mengubahnya di file route:
+  ```
+  routes/api/roast_v2.js
+  ```
+  Silakan sesuaikan dengan kebutuhan kamu.
